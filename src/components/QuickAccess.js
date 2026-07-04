@@ -38,10 +38,10 @@ export default function QuickAccess({ liens }) {
   return (
     <Box>
       <Box>
-        <Typography sx={{ color: COLORS.goldDark, fontWeight: 800, letterSpacing: 1.2, fontSize: '0.72rem', textTransform: 'uppercase' }}>
+        <Typography sx={{ color: COLORS.goldDark, fontWeight: 800, letterSpacing: 1.5, fontSize: '0.8rem', textTransform: 'uppercase', mb: 0.5 }}>
           Services & outils
         </Typography>
-        <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: '1.35rem' }}>
+        <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.7rem', md: '2.1rem' }, lineHeight: 1.1 }}>
           Accès rapides
         </Typography>
         <Box sx={{ display: 'block', width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1, mb: 2 }} />

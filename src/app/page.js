@@ -31,13 +31,18 @@ export default async function Home() {
       getLiensPartenaires(),
     ]);
 
-  // Agenda d'accueil : événements à venir, du plus proche au plus lointain,
+  // Agenda d'accueil : TOUS les événements — les à venir d'abord (du plus proche
+  // au plus lointain), puis les passés (du plus récent au plus ancien),
   // ramenés à la forme attendue par AgendaBlock.
   const agendaEvents = evenements
-    ? evenements
-        .filter((e) => !e.passe)
-        .sort((a, b) => (a.date_iso < b.date_iso ? -1 : 1))
-        .map((e) => ({ date: e.date, tag: e.type, titre: e.titre, image: e.src }))
+    ? [
+        ...evenements
+          .filter((e) => !e.passe)
+          .sort((a, b) => (a.date_iso < b.date_iso ? -1 : 1)),
+        ...evenements
+          .filter((e) => e.passe)
+          .sort((a, b) => (a.date_iso > b.date_iso ? -1 : 1)),
+      ].map((e) => ({ date: e.date, tag: e.type, titre: e.titre, image: e.src }))
     : undefined;
 
   // 6 dernières actualités → forme attendue par ActusSlider.
@@ -57,6 +62,9 @@ export default async function Home() {
           <QuickAccess liens={quickLinks} />
         </Container>
       </Box>
+
+      {/* Actualités — dernières actualités (remonté en tête de contenu) */}
+      <ActusSlider actus={actusCards} />
 
       {/* Zone deux colonnes */}
       <Box
@@ -99,7 +107,6 @@ export default async function Home() {
         </Container>
       </Box>
 
-      <ActusSlider actus={actusCards} />
       <MacroIndicators
         grands={indicateurs?.grands?.length ? indicateurs.grands : undefined}
         cles={indicateurs?.cles?.length ? indicateurs.cles : undefined}

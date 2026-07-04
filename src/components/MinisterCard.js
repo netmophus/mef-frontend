@@ -4,17 +4,26 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import DescriptionIcon from '@mui/icons-material/Description';
 import LinkIcon from '@mui/icons-material/Link';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { COLORS } from '@/theme';
 
-// Correspondance clé (API) → icône Material UI.
-const ICONS = {
-  menu_book: MenuBookIcon,
-  groups: GroupsIcon,
-  record_voice_over: RecordVoiceOverIcon,
-  description: DescriptionIcon,
-  link: LinkIcon,
+// ⚠️ Composant serveur : pour les dégradés/accents, on utilise des couleurs
+// LITTÉRALES (le CSS bâti à partir des constantes du thème — notamment l'or —
+// peut être supprimé du rendu serveur).
+const GOLD = '#E0A92E';
+const GOLD_DARK = '#B5841F';
+const TRICOLOR = 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)';
+
+// Correspondance clé (API) → icône + accent + sous-titre par défaut.
+const LINK_META = {
+  menu_book: { Icon: MenuBookIcon, accent: '#004080', desc: 'Parcours & biographie' },
+  groups: { Icon: GroupsIcon, accent: '#2E8B57', desc: 'Membres du cabinet' },
+  record_voice_over: { Icon: RecordVoiceOverIcon, accent: GOLD_DARK, desc: 'Allocutions & interventions' },
+  description: { Icon: DescriptionIcon, accent: '#E07B2C', desc: 'Documents officiels' },
+  link: { Icon: LinkIcon, accent: '#004080', desc: 'En savoir plus' },
 };
+// Accents de repli (si l'icône n'est pas connue), dans l'ordre des liens.
+const ACCENT_CYCLE = ['#004080', '#2E8B57', GOLD_DARK, '#E07B2C'];
 
 // === LE MINISTRE — repli local (si l'API est indisponible) ===================
 const MINISTRE_FALLBACK = {
@@ -24,8 +33,8 @@ const MINISTRE_FALLBACK = {
   etiquette: 'Le Ministre',
   liens: [
     { label: 'Biographie du Ministre', icone: 'menu_book', href: '/le-ministere/ministre' },
-    { label: 'Cabinet du ministre', icone: 'groups', href: '#' },
-    { label: 'Discours', icone: 'record_voice_over', href: '#' },
+    { label: 'Cabinet du ministre', icone: 'groups', href: '/le-ministere/cabinet' },
+    { label: 'Discours', icone: 'record_voice_over', href: '/le-ministere/discours' },
   ],
 };
 // =============================================================================
@@ -44,7 +53,7 @@ export default function MinisterCard({ ministre }) {
         borderRadius: 3,
         border: `1px solid ${COLORS.border}`,
         backgroundColor: '#fff',
-        boxShadow: '0 10px 28px rgba(0,0,0,0.08)',
+        boxShadow: '0 14px 34px rgba(0,40,80,0.10)',
         overflow: 'hidden',
         height: '100%',
         width: '100%',
@@ -66,52 +75,120 @@ export default function MinisterCard({ ministre }) {
             backgroundColor: COLORS.blueDark,
           }}
         />
-        <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(0,28,56,0.94) 0%, rgba(0,40,80,0.25) 55%, rgba(0,40,80,0) 100%)' }} />
+        <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(0,28,56,0.95) 0%, rgba(0,40,80,0.30) 52%, rgba(0,40,80,0) 100%)' }} />
         {/* Étiquette */}
-        <Box sx={{ position: 'absolute', top: 14, left: 14, backgroundColor: '#E0A92E', color: COLORS.blueDark, fontWeight: 800, fontSize: '0.62rem', letterSpacing: 0.5, textTransform: 'uppercase', px: 1, py: 0.4, borderRadius: 0.75 }}>
+        <Box sx={{ position: 'absolute', top: 14, left: 14, display: 'inline-flex', alignItems: 'center', gap: 0.6, backgroundColor: GOLD, color: '#002B55', fontWeight: 800, fontSize: '0.62rem', letterSpacing: 0.6, textTransform: 'uppercase', px: 1.1, py: 0.45, borderRadius: 0.75, boxShadow: '0 4px 12px rgba(0,0,0,0.25)' }}>
+          <Box sx={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#002B55' }} />
           {etiquette}
         </Box>
         {/* Nom + fonction */}
         <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 2.5, color: '#fff' }}>
-          <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.2rem', lineHeight: 1.2, textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
+          <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.2, textShadow: '0 2px 12px rgba(0,0,0,0.55)' }}>
             {nom}
           </Typography>
-          <Typography sx={{ color: '#E0A92E', fontWeight: 700, fontSize: '0.85rem', mt: 0.25 }}>
+          <Typography sx={{ color: GOLD, fontWeight: 700, fontSize: '0.86rem', mt: 0.35 }}>
             {fonction}
           </Typography>
         </Box>
+        {/* Filet tricolore en pied de photo */}
+        <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 4, background: TRICOLOR }} />
       </Box>
 
       {/* Liens */}
-      <Box sx={{ p: 1.5, display: 'flex', flexDirection: 'column', gap: 0.75 }}>
-        {liens.map(({ label, icone, href }) => {
-          const Icon = ICONS[icone] || LinkIcon;
+      <Box sx={{ p: 1.5, display: 'flex', flexDirection: 'column', gap: 1 }}>
+        {liens.map((lien, i) => {
+          const meta = LINK_META[lien.icone] || LINK_META.link;
+          const Icon = meta.Icon;
+          const accent = meta.accent || ACCENT_CYCLE[i % ACCENT_CYCLE.length];
+          const desc = lien.desc || meta.desc;
           return (
-          <Box
-            key={label}
-            component="a"
-            href={href}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1.25,
-              px: 1.5,
-              py: 1.1,
-              borderRadius: 2,
-              textDecoration: 'none',
-              color: COLORS.ink,
-              backgroundColor: COLORS.bg,
-              transition: 'all 0.2s ease',
-              '&:hover': { backgroundColor: 'rgba(0,64,128,0.08)', pl: 2 },
-              '&:hover .ml-chevron': { color: '#E0A92E', transform: 'translateX(3px)' },
-            }}
-          >
-            <Box sx={{ width: 34, height: 34, borderRadius: 1.5, backgroundColor: '#fff', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: `1px solid ${COLORS.border}`, '& svg': { fontSize: 20 } }}>
-              <Icon />
+            <Box
+              key={lien.label}
+              component="a"
+              href={lien.href}
+              sx={{
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1.4,
+                pl: 1.75,
+                pr: 1.5,
+                py: 1.15,
+                borderRadius: 2,
+                textDecoration: 'none',
+                overflow: 'hidden',
+                backgroundColor: '#fff',
+                border: `1px solid ${COLORS.border}`,
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
+                // Barre d'accent latérale
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: 4,
+                  backgroundColor: accent,
+                  transform: 'scaleY(0.55)',
+                  transformOrigin: 'center',
+                  transition: 'transform 0.2s ease',
+                },
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  boxShadow: `0 10px 22px ${accent}22`,
+                  borderColor: accent,
+                },
+                '&:hover::before': { transform: 'scaleY(1)' },
+                '&:hover .mc-tile': { backgroundColor: accent, color: '#fff', borderColor: accent },
+                '&:hover .mc-arrow': { backgroundColor: accent, color: '#fff', transform: 'translateX(2px)' },
+              }}
+            >
+              <Box
+                className="mc-tile"
+                sx={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 1.75,
+                  backgroundColor: `${accent}14`,
+                  color: accent,
+                  border: `1px solid ${accent}33`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  transition: 'all 0.2s ease',
+                  '& svg': { fontSize: 21 },
+                }}
+              >
+                <Icon />
+              </Box>
+              <Box sx={{ flex: 1, minWidth: 0 }}>
+                <Typography sx={{ fontWeight: 800, color: COLORS.ink, fontSize: '0.94rem', lineHeight: 1.25 }}>
+                  {lien.label}
+                </Typography>
+                <Typography sx={{ color: COLORS.muted, fontSize: '0.72rem', fontWeight: 600, mt: 0.15 }}>
+                  {desc}
+                </Typography>
+              </Box>
+              <Box
+                className="mc-arrow"
+                sx={{
+                  width: 26,
+                  height: 26,
+                  borderRadius: '50%',
+                  backgroundColor: COLORS.bg,
+                  color: COLORS.muted,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  transition: 'all 0.2s ease',
+                  '& svg': { fontSize: 16 },
+                }}
+              >
+                <ArrowForwardIcon />
+              </Box>
             </Box>
-            <Typography sx={{ fontWeight: 700, color: COLORS.ink, fontSize: '0.92rem', flex: 1 }}>{label}</Typography>
-            <ChevronRightIcon className="ml-chevron" sx={{ color: COLORS.muted, transition: 'all 0.2s ease' }} />
-          </Box>
           );
         })}
       </Box>

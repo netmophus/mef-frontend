@@ -64,8 +64,22 @@ export default function AgendaBlock({ events }) {
   // Données de l'API si fournies (forme { date, tag, titre, image }),
   // sinon repli sur les événements de démo.
   const source = events && events.length ? events : EVENTS;
+  // Pagination par 4. La dernière page est calée sur la fin de la liste pour
+  // toujours afficher 4 cartes (jamais de case vide). Quand il reste moins de
+  // 4 événements sur la fin, la fenêtre recule pour compléter à 4.
+  const SIZE = 4;
   const PAGES = [];
-  for (let i = 0; i < source.length; i += 4) PAGES.push(source.slice(i, i + 4));
+  if (source.length <= SIZE) {
+    PAGES.push(source);
+  } else {
+    for (let i = 0; i < source.length; i += SIZE) {
+      if (i + SIZE >= source.length) {
+        PAGES.push(source.slice(source.length - SIZE));
+        break;
+      }
+      PAGES.push(source.slice(i, i + SIZE));
+    }
+  }
   const N = PAGES.length;
 
   const [page, setPage] = useState(0);
