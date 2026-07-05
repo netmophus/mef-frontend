@@ -251,23 +251,41 @@ export default function ResourcesPartners({ liens, partenaires, reforme, hideHea
                       '&:hover': { borderColor: c, boxShadow: `0 8px 18px ${c}33`, transform: 'translateY(-3px)' },
                     }}
                   >
-                    <Box
-                      sx={{
-                        width: 46,
-                        height: 46,
-                        borderRadius: '50%',
-                        flexShrink: 0,
-                        background: `linear-gradient(135deg, ${c} 0%, ${c}cc 100%)`,
-                        color: '#fff',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontWeight: 800,
-                        fontSize: '0.85rem',
-                      }}
-                    >
-                      {p.init}
-                    </Box>
+                    {p.logo ? (
+                      <Box
+                        component="img"
+                        src={p.logo}
+                        alt={p.nom}
+                        sx={{
+                          width: 46,
+                          height: 46,
+                          borderRadius: '50%',
+                          flexShrink: 0,
+                          objectFit: 'contain',
+                          backgroundColor: '#fff',
+                          border: `1px solid ${COLORS.border}`,
+                          p: 0.4,
+                        }}
+                      />
+                    ) : (
+                      <Box
+                        sx={{
+                          width: 46,
+                          height: 46,
+                          borderRadius: '50%',
+                          flexShrink: 0,
+                          background: `linear-gradient(135deg, ${c} 0%, ${c}cc 100%)`,
+                          color: '#fff',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 800,
+                          fontSize: '0.85rem',
+                        }}
+                      >
+                        {p.init}
+                      </Box>
+                    )}
                     <Box sx={{ minWidth: 0 }}>
                       <Typography sx={{ fontWeight: 800, color: COLORS.ink, fontSize: '0.95rem', lineHeight: 1.1 }}>
                         {p.nom}
