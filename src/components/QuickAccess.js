@@ -23,12 +23,18 @@ const ICONS = {
 };
 
 // === ACCÈS RAPIDES — repli local (si l'API est indisponible) =================
-// ⚠️ URL = PLACEHOLDERS ('#'). Les vraies adresses se gèrent dans l'admin.
+// Services & démembrements du Ministère (URLs officielles). Gérable dans l'admin.
+// ⚠️ e-SECeF / SYGMEF restent en '#' (applications internes, pas d'URL publique).
 const OUTILS_FALLBACK = [
   { nom: 'e-SECeF', icone: 'computer', colors: ['#0a5ca8', '#002B55'], href: '#' },
-  { nom: 'Marchés publics', icone: 'gavel', colors: ['#37a06a', '#1F6E42'], href: '#' },
-  { nom: 'SYGMEF', icone: 'account_balance', colors: ['#ef9038', '#B85E18'], href: '#' },
-  { nom: 'DGI', icone: 'receipt_long', colors: ['#caa029', '#8a6a14'], href: '#' },
+  { nom: 'Marchés publics', icone: 'gavel', colors: ['#37a06a', '#1F6E42'], href: 'https://www.marchespublics.ne/' },
+  { nom: 'Impôts (DGI)', icone: 'receipt_long', colors: ['#caa029', '#8a6a14'], href: 'https://www.impots.gouv.ne/' },
+  { nom: 'Douanes (DGD)', icone: 'public', colors: ['#ef9038', '#B85E18'], href: 'http://www.douanes.gouv.ne/' },
+  { nom: 'Trésor (DGTCP)', icone: 'account_balance', colors: ['#0a5ca8', '#002B55'], href: 'https://tresor.ne/' },
+  { nom: 'SYGMEF', icone: 'description', colors: ['#2f8f7a', '#1f6e5e'], href: '#' },
+  { nom: 'Cour des comptes', icone: 'gavel', colors: ['#4b6cb7', '#2a3f7a'], href: 'https://www.courdescomptes.ne/' },
+  { nom: 'MDE', icone: 'payments', colors: ['#b98a2e', '#7a5a14'], href: 'https://mde.ne/' },
+  { nom: 'Finance inclusive (SNFI)', icone: 'payments', colors: ['#37a06a', '#1F6E42'], href: 'http://www.se-snfi.ne/' },
 ];
 // =============================================================================
 
