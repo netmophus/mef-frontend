@@ -16,6 +16,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CloseIcon from '@mui/icons-material/Close';
 import Link from 'next/link';
+import ArticleReader from '@/components/ArticleReader';
 import { COLORS } from '@/theme';
 
 // === ACTUALITÉS DE DÉMO (placeholder) ========================================
@@ -338,74 +339,7 @@ export default function NewsHighlights({ hideHeader = false, articles = ARTICLES
       </Box>
 
       {/* Panneau article (glisse depuis la droite) — convention Primature */}
-      <Drawer
-        anchor="right"
-        open={Boolean(selected)}
-        onClose={() => setSelected(null)}
-        sx={{ zIndex: 1500 }}
-        slotProps={{ paper: { sx: { width: { xs: '100%', md: '55%' } } } }}
-      >
-        {selected && (
-          <Box>
-            {/* Couverture */}
-            <Box sx={{ position: 'relative', aspectRatio: '16 / 9', backgroundColor: COLORS.blueDark }}>
-              <Box
-                sx={{
-                  position: 'absolute',
-                  inset: 0,
-                  backgroundImage: bg(selected),
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0))' }} />
-              <Chip
-                label={selected.categorie}
-                size="small"
-                sx={{ position: 'absolute', bottom: 12, left: 16, backgroundColor: COLORS.gold, color: COLORS.blueDark, fontWeight: 800 }}
-              />
-              <IconButton
-                onClick={() => setSelected(null)}
-                aria-label="Fermer"
-                sx={{ position: 'absolute', top: 12, right: 12, backgroundColor: 'rgba(255,255,255,0.9)', '&:hover': { backgroundColor: '#fff' } }}
-              >
-                <CloseIcon />
-              </IconButton>
-            </Box>
-
-            {/* Corps */}
-            <Box sx={{ p: { xs: 2.5, md: 3.5 } }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.6, color: COLORS.muted, mb: 1 }}>
-                <CalendarTodayIcon sx={{ fontSize: 16 }} />
-                <Typography variant="caption" sx={{ fontWeight: 600 }}>{selected.date}</Typography>
-              </Box>
-              <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.4rem', md: '1.7rem' }, lineHeight: 1.25, mb: 2 }}>
-                {selected.titre}
-              </Typography>
-              <Typography sx={{ fontSize: '1.05rem', fontWeight: 600, color: COLORS.ink, borderLeft: `4px solid ${COLORS.gold}`, pl: 2, mb: 2.5 }}>
-                {selected.extrait}
-              </Typography>
-              {((selected.paragraphes && selected.paragraphes.length ? selected.paragraphes : PARAS)).map((p, idx) => (
-                <Typography key={idx} sx={{ color: '#455a64', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
-                  {p}
-                </Typography>
-              ))}
-              <Divider sx={{ my: 2 }} />
-              <Typography variant="caption" sx={{ color: COLORS.muted }}>
-                ⚠️ Contenu de démonstration — l'article complet sera fourni par l'administration.
-              </Typography>
-              <Button
-                onClick={() => setSelected(null)}
-                fullWidth
-                variant="outlined"
-                sx={{ mt: 2, fontWeight: 700, borderColor: COLORS.blue, color: COLORS.blue }}
-              >
-                Fermer
-              </Button>
-            </Box>
-          </Box>
-        )}
-      </Drawer>
+      <ArticleReader article={selected} onClose={() => setSelected(null)} />
     </Box>
   );
 }

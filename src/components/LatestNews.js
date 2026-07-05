@@ -5,6 +5,7 @@ import { Box, Typography, Chip, Button, Drawer, IconButton, Divider } from '@mui
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CloseIcon from '@mui/icons-material/Close';
+import ArticleReader from '@/components/ArticleReader';
 import { COLORS, TRICOLOR } from '@/theme';
 
 // Liste des « Dernières actualités » : à la une + grille filtrable par rubrique,
@@ -160,50 +161,8 @@ export default function LatestNews({ articles = [] }) {
         )}
       </Box>
 
-      {/* Panneau de lecture */}
-      <Drawer
-        anchor="right"
-        open={Boolean(selected)}
-        onClose={fermer}
-        sx={{ zIndex: 1500 }}
-        slotProps={{ paper: { sx: { width: { xs: '100%', md: '55%' } } } }}
-      >
-        {selected && (
-          <Box>
-            <Box sx={{ position: 'relative', aspectRatio: '16 / 9', backgroundColor: COLORS.blueDark }}>
-              <Box sx={{ position: 'absolute', inset: 0, backgroundImage: couverture(selected), backgroundSize: 'cover', backgroundPosition: 'center' }} />
-              <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0))' }} />
-              <Chip label={selected.rubrique} size="small" sx={{ position: 'absolute', bottom: 12, left: 16, backgroundColor: '#E0A92E', color: COLORS.blueDark, fontWeight: 800 }} />
-              <IconButton onClick={fermer} aria-label="Fermer" sx={{ position: 'absolute', top: 12, right: 12, backgroundColor: 'rgba(255,255,255,0.9)', '&:hover': { backgroundColor: '#fff' } }}>
-                <CloseIcon />
-              </IconButton>
-            </Box>
-            <Box sx={{ p: { xs: 2.5, md: 3.5 } }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.6, color: COLORS.muted, mb: 1 }}>
-                <CalendarTodayIcon sx={{ fontSize: 16 }} />
-                <Typography variant="caption" sx={{ fontWeight: 600 }}>{selected.date}</Typography>
-              </Box>
-              <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.4rem', md: '1.7rem' }, lineHeight: 1.25, mb: 2 }}>
-                {selected.titre}
-              </Typography>
-              {selected.chapo && (
-                <Typography sx={{ fontSize: '1.05rem', fontWeight: 600, color: COLORS.ink, borderLeft: '4px solid #E0A92E', pl: 2, mb: 2.5 }}>
-                  {selected.chapo}
-                </Typography>
-              )}
-              {(selected.paragraphes || []).map((p, idx) => (
-                <Typography key={idx} sx={{ color: '#455a64', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
-                  {p}
-                </Typography>
-              ))}
-              <Divider sx={{ my: 2 }} />
-              <Button onClick={fermer} fullWidth variant="outlined" sx={{ mt: 1, fontWeight: 700, borderColor: COLORS.blue, color: COLORS.blue }}>
-                Fermer
-              </Button>
-            </Box>
-          </Box>
-        )}
-      </Drawer>
+      {/* Panneau de lecture (composant partagé) */}
+      <ArticleReader article={selected} onClose={fermer} />
     </Box>
   );
 }
