@@ -3,7 +3,8 @@ import PublicIcon from '@mui/icons-material/Public';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { COLORS } from '@/theme';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import { COLORS, TRICOLOR } from '@/theme';
 
 // === LIENS, PARTENAIRES & RÉFORME (démo) =====================================
 // ⚠️ URL en '#'. Logos partenaires à déposer dans public/partenaires/.
@@ -48,8 +49,6 @@ export default function ResourcesPartners({ liens, partenaires, reforme, hideHea
   const PARTS = partenaires && partenaires.length ? partenaires : PARTENAIRES;
   const R = reforme ? { ...REFORME_DEFAUT, ...reforme } : REFORME_DEFAUT;
 
-  const lienScroll = LIENS.length > 5;
-  const liensList = lienScroll ? [...LIENS, ...LIENS] : LIENS;
   const partTrack = [...PARTS, ...PARTS];
 
   return (
@@ -123,7 +122,7 @@ export default function ResourcesPartners({ liens, partenaires, reforme, hideHea
             </Box>
           </Box>
 
-          {/* Liens utiles — carte épurée */}
+          {/* Liens utiles — liste moderne (statique, tout visible) */}
           <Box
             sx={{
               borderRadius: 3,
@@ -135,62 +134,54 @@ export default function ResourcesPartners({ liens, partenaires, reforme, hideHea
               flexDirection: 'column',
             }}
           >
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2.5, py: 2, borderBottom: `1px solid ${COLORS.border}` }}>
-              <PublicIcon sx={{ color: COLORS.blue }} />
-              <Typography component="h3" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: '1.1rem' }}>
-                Liens utiles
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                position: 'relative',
-                height: 5 * 52,
-                overflow: 'hidden',
-                ...(lienScroll && {
-                  '&::after': { content: '""', position: 'absolute', bottom: 0, left: 0, right: 0, height: 26, background: 'linear-gradient(0deg,#fff,rgba(255,255,255,0))', zIndex: 2, pointerEvents: 'none' },
-                  '&:hover .lu-track': { animationPlayState: 'paused' },
-                }),
-              }}
-            >
-              <Box
-                className="lu-track"
-                sx={{
-                  ...(lienScroll && {
-                    animation: `luScroll ${LIENS.length * 4}s linear infinite`,
-                    '@keyframes luScroll': { from: { transform: 'translateY(0)' }, to: { transform: 'translateY(-50%)' } },
-                  }),
-                }}
-              >
-                {liensList.map((l, i) => {
-                  const c = CHARTE[i % CHARTE.length];
-                  return (
-                    <Box
-                      key={i}
-                      component="a"
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 1.5,
-                        px: 2.5,
-                        height: 52,
-                        textDecoration: 'none',
-                        color: COLORS.ink,
-                        borderBottom: `1px solid ${COLORS.border}`,
-                        transition: 'background-color 0.2s ease, padding-left 0.2s ease',
-                        '&:hover': { backgroundColor: COLORS.bg, pl: 3 },
-                        '&:hover .lu-chev': { color: c, transform: 'translateX(3px)' },
-                      }}
-                    >
-                      <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: c, flexShrink: 0 }} />
-                      <Typography sx={{ fontWeight: 600, fontSize: '0.92rem', flex: 1 }}>{l.label}</Typography>
-                      <ChevronRightIcon className="lu-chev" sx={{ fontSize: 18, color: COLORS.muted, transition: 'all 0.2s ease' }} />
-                    </Box>
-                  );
-                })}
+            <Box sx={{ px: 2.5, pt: 2, pb: 1.5, borderBottom: `1px solid ${COLORS.border}` }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <PublicIcon sx={{ color: COLORS.blue }} />
+                <Typography component="h3" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: '1.1rem' }}>
+                  Liens utiles
+                </Typography>
               </Box>
+              <Box sx={{ width: 54, height: 3.5, borderRadius: 2, background: TRICOLOR, mt: 1 }} />
+            </Box>
+            <Box sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 0.25 }}>
+              {LIENS.map((l, i) => {
+                const c = CHARTE[i % CHARTE.length];
+                return (
+                  <Box
+                    key={i}
+                    component="a"
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 1.4,
+                      px: 1.5,
+                      py: 1.05,
+                      borderRadius: 2,
+                      textDecoration: 'none',
+                      color: COLORS.ink,
+                      transition: 'background-color 0.2s ease',
+                      '&::before': {
+                        content: '""', position: 'absolute', left: 0, top: '22%', bottom: '22%',
+                        width: 3, borderRadius: 3, backgroundColor: c, opacity: 0, transition: 'opacity 0.2s ease',
+                      },
+                      '&:hover': { backgroundColor: `${c}12` },
+                      '&:hover::before': { opacity: 1 },
+                      '&:hover .lu-chev': { color: c, transform: 'translateX(3px)' },
+                    }}
+                  >
+                    <Box sx={{ width: 34, height: 34, borderRadius: 1.5, flexShrink: 0, backgroundColor: `${c}14`, color: c,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 19 } }}>
+                      <AccountBalanceIcon />
+                    </Box>
+                    <Typography sx={{ fontWeight: 700, fontSize: '0.9rem', flex: 1, color: COLORS.ink }}>{l.label}</Typography>
+                    <ChevronRightIcon className="lu-chev" sx={{ fontSize: 18, color: COLORS.muted, transition: 'all 0.2s ease' }} />
+                  </Box>
+                );
+              })}
             </Box>
           </Box>
         </Box>
