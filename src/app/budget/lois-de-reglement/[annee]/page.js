@@ -6,8 +6,8 @@ import PageHero from '@/components/PageHero';
 import { getBudgetDocuments } from '@/lib/api';
 
 const C = {
-  blue: '#004080',
-  blueHover: '#003366',
+  blue: '#0C7449',
+  blueHover: '#0A5C3A',
   ink: '#37474F',
   muted: '#90A4AE',
   bg: '#EEF1F5',
@@ -69,7 +69,7 @@ export default async function Page({ params }) {
                         borderRadius: 2.5,
                         p: { xs: 1.75, md: 2 },
                         transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
-                        '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 12px 26px rgba(0,0,0,0.09)', borderColor: '#2E8B57' },
+                        '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 12px 26px rgba(0,0,0,0.09)', borderColor: '#00B16C' },
                       }}
                     >
                       <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: 1.5, backgroundColor: 'rgba(211,47,47,0.10)', color: '#d32f2f', display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 26 } }}>
@@ -81,7 +81,7 @@ export default async function Page({ params }) {
                         </Typography>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5, flexWrap: 'wrap' }}>
                           {doc.type && (
-                            <Chip label={doc.type} size="small" sx={{ height: 20, fontWeight: 700, fontSize: '0.66rem', backgroundColor: 'rgba(46,139,87,0.12)', color: '#1F6E42' }} />
+                            <Chip label={doc.type} size="small" sx={{ height: 20, fontWeight: 700, fontSize: '0.66rem', backgroundColor: 'rgba(0,177,108,0.12)', color: '#0A5C3A' }} />
                           )}
                           {doc.date && <Typography sx={{ color: C.muted, fontSize: '0.78rem' }}>{doc.date}</Typography>}
                         </Box>

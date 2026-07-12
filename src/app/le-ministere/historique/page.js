@@ -89,7 +89,7 @@ export default async function Page() {
             {/* Introduction */}
             <Card>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 2 }}>
-                <Box sx={{ width: 36, height: 36, borderRadius: 1.5, backgroundColor: 'rgba(0,64,128,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 21 } }}>
+                <Box sx={{ width: 36, height: 36, borderRadius: 1.5, backgroundColor: 'rgba(12,116,73,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 21 } }}>
                   <HistoryEduIcon />
                 </Box>
                 <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: '1.2rem' }}>Aux origines</Typography>
@@ -109,7 +109,7 @@ export default async function Page() {
               <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.4rem', md: '1.7rem' } }}>
                 Dénominations successives
               </Typography>
-              <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1.5, mb: 3 }} />
+              <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1.5, mb: 3 }} />
               <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: { xs: 0, md: 4 } }}>
                 {colonnes.map((col, ci) => (
                   <Box key={ci}>
@@ -145,7 +145,7 @@ export default async function Page() {
                       '&:hover .rub-go': { gap: '10px', color: COLORS.goldDark },
                     }}
                   >
-                    <Box sx={{ width: 46, height: 46, borderRadius: 2, backgroundColor: 'rgba(0,64,128,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1.5, '& svg': { fontSize: 26 } }}>
+                    <Box sx={{ width: 46, height: 46, borderRadius: 2, backgroundColor: 'rgba(12,116,73,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1.5, '& svg': { fontSize: 26 } }}>
                       <Icon />
                     </Box>
                     <Typography sx={{ fontWeight: 800, color: COLORS.ink, fontSize: '0.98rem', lineHeight: 1.3, flex: 1, mb: 1.25 }}>

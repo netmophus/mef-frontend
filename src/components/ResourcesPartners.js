@@ -29,7 +29,7 @@ const PARTENAIRES = [
   { nom: 'BCEAO', sigle: 'Banque Centrale', init: 'BC' },
 ];
 
-const CHARTE = ['#0a5ca8', '#2E8B57', '#caa029', '#E07B2C'];
+const CHARTE = ['#0C7449', '#00B16C', '#caa029', '#FB9344'];
 const REFORME_IMG = 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80';
 
 // Carte « Réforme » — valeurs par défaut (repli si l'API ne fournit rien).
@@ -63,7 +63,7 @@ export default function ResourcesPartners({ liens, partenaires, reforme, hideHea
             <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.7rem', md: '2.1rem' }, lineHeight: 1.1 }}>
               Liens &amp; Partenaires
             </Typography>
-            <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
+            <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
           </Box>
         )}
 
@@ -97,7 +97,7 @@ export default function ResourcesPartners({ liens, partenaires, reforme, hideHea
                 transition: 'transform 0.6s ease',
               }}
             />
-            <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(0,28,56,0.94) 0%, rgba(0,43,85,0.55) 55%, rgba(0,64,128,0.2) 100%)' }} />
+            <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(0,28,56,0.94) 0%, rgba(0,43,85,0.55) 55%, rgba(12,116,73,0.2) 100%)' }} />
             <Box sx={{ position: 'relative' }}>
               <Chip
                 label={R.etiquette}

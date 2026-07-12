@@ -28,7 +28,7 @@ export default function Page() {
         intro="Les rapports d'exécution sont publiés trimestriellement par la Direction Générale du Budget (DGB). Ils sont regroupés par année. Il s'agit des rapports provisoires sur l'exécution du Budget Général de l'État."
         annees={ANNEES}
         basePath="/budget/rapports-execution"
-        accent={{ main: '#E07B2C', dark: '#B85E18' }}
+        accent={{ main: '#FB9344', dark: '#C4611E' }}
       />
     </>
   );

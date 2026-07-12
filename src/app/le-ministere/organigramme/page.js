@@ -40,7 +40,7 @@ export default function Page() {
           >
             {/* Barre d'actions */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap', px: { xs: 2, md: 3 }, py: 2, borderBottom: `1px solid ${COLORS.border}` }}>
-              <Box sx={{ width: 42, height: 42, borderRadius: 1.5, backgroundColor: 'rgba(0,64,128,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 24 } }}>
+              <Box sx={{ width: 42, height: 42, borderRadius: 1.5, backgroundColor: 'rgba(12,116,73,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 24 } }}>
                 <AccountTreeIcon />
               </Box>
               <Box sx={{ flex: 1, minWidth: 180 }}>

@@ -6,8 +6,8 @@ import PageHero from '@/components/PageHero';
 import { getBudgetDocuments } from '@/lib/api';
 
 const C = {
-  blue: '#004080',
-  blueHover: '#003366',
+  blue: '#0C7449',
+  blueHover: '#0A5C3A',
   ink: '#37474F',
   muted: '#90A4AE',
   bg: '#EEF1F5',
@@ -81,7 +81,7 @@ export default async function Page({ params }) {
                         </Typography>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5, flexWrap: 'wrap' }}>
                           {doc.type && (
-                            <Chip label={doc.type} size="small" sx={{ height: 20, fontWeight: 700, fontSize: '0.66rem', backgroundColor: 'rgba(0,64,128,0.08)', color: C.blue }} />
+                            <Chip label={doc.type} size="small" sx={{ height: 20, fontWeight: 700, fontSize: '0.66rem', backgroundColor: 'rgba(12,116,73,0.08)', color: C.blue }} />
                           )}
                           {doc.date && <Typography sx={{ color: C.muted, fontSize: '0.78rem' }}>{doc.date}</Typography>}
                         </Box>

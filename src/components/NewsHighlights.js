@@ -165,7 +165,7 @@ function Tile({ item, index, onOpen }) {
           position: 'absolute',
           inset: 0,
           background:
-            'linear-gradient(0deg, rgba(0,28,56,0.92) 0%, rgba(0,40,80,0.35) 55%, rgba(0,40,80,0) 100%)',
+            'linear-gradient(0deg, rgba(0,28,56,0.92) 0%, rgba(10,92,57,0.35) 55%, rgba(10,92,57,0) 100%)',
         }}
       />
       <Chip

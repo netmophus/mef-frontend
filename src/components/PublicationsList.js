@@ -13,12 +13,12 @@ const TYPE_COLORS = {
   Bulletin: { main: COLORS.blue, dark: COLORS.blue },
   Arrêté: { main: COLORS.gold, dark: COLORS.goldDark },
   Décret: { main: COLORS.green, dark: COLORS.greenDark },
-  Synthèse: { main: COLORS.orange, dark: '#B85E18' },
+  Synthèse: { main: COLORS.orange, dark: '#C4611E' },
   Rapport: { main: '#6FB3E0', dark: '#1F6E9E' },
   Document: { main: COLORS.green, dark: COLORS.greenDark },
   'Compte rendu': { main: COLORS.gold, dark: COLORS.goldDark },
-  Plan: { main: COLORS.orange, dark: '#B85E18' },
-  Étude: { main: COLORS.orange, dark: '#B85E18' },
+  Plan: { main: COLORS.orange, dark: '#C4611E' },
+  Étude: { main: COLORS.orange, dark: '#C4611E' },
   Projet: { main: COLORS.green, dark: COLORS.greenDark },
   Loi: { main: COLORS.blueDark, dark: COLORS.blueDark },
   Communiqué: { main: COLORS.gold, dark: COLORS.goldDark },
@@ -28,7 +28,7 @@ const TYPE_COLORS = {
 const YEAR_PALETTE = [
   { main: COLORS.blue, dark: COLORS.blue },
   { main: COLORS.green, dark: COLORS.greenDark },
-  { main: COLORS.orange, dark: '#B85E18' },
+  { main: COLORS.orange, dark: '#C4611E' },
   { main: COLORS.gold, dark: COLORS.goldDark },
 ];
 const colorOf = (t) => {

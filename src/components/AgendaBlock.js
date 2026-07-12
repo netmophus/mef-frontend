@@ -96,7 +96,7 @@ export default function AgendaBlock({ events }) {
           <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.6rem', md: '2rem' }, lineHeight: 1.1 }}>
             Événements
           </Typography>
-          <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
+          <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
         </Box>
         <Box sx={{ display: 'flex', gap: 1 }}>
           {[{ dir: -1, icon: <ArrowBackIosNewIcon fontSize="small" />, label: 'Précédent' }, { dir: 1, icon: <ArrowForwardIosIcon fontSize="small" />, label: 'Suivant' }].map((b) => (

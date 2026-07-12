@@ -63,7 +63,7 @@ export default function Page() {
                     '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 12px 26px rgba(0,0,0,0.10)', borderColor: '#E0A92E' },
                   }}
                 >
-                  <Box sx={{ width: 48, height: 48, flexShrink: 0, borderRadius: 2, backgroundColor: isImg ? 'rgba(0,64,128,0.10)' : 'rgba(211,47,47,0.10)', color: isImg ? COLORS.blue : '#d32f2f', display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 28 } }}>
+                  <Box sx={{ width: 48, height: 48, flexShrink: 0, borderRadius: 2, backgroundColor: isImg ? 'rgba(12,116,73,0.10)' : 'rgba(211,47,47,0.10)', color: isImg ? COLORS.blue : '#d32f2f', display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 28 } }}>
                     {isImg ? <ImageIcon /> : <PictureAsPdfIcon />}
                   </Box>
                   <Box sx={{ flex: 1, minWidth: 220 }}>

@@ -6,8 +6,8 @@ import PageHero from '@/components/PageHero';
 import { getRevueNumeros } from '@/lib/api';
 
 const C = {
-  blue: '#004080',
-  blueHover: '#003366',
+  blue: '#0C7449',
+  blueHover: '#0A5C3A',
   ink: '#37474F',
   muted: '#90A4AE',
   bg: '#EEF1F5',

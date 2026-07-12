@@ -90,9 +90,9 @@ export default function YearArchive({ intro, annees = [], basePath = '#', varian
                         height: 22,
                         fontWeight: 800,
                         fontSize: '0.7rem',
-                        backgroundColor: adoptee ? 'rgba(46,139,87,0.14)' : 'rgba(224,123,44,0.14)',
-                        color: adoptee ? COLORS.greenDark : '#B85E18',
-                        '& .MuiChip-icon': { color: adoptee ? COLORS.greenDark : '#B85E18' },
+                        backgroundColor: adoptee ? 'rgba(0,177,108,0.14)' : 'rgba(251,147,68,0.14)',
+                        color: adoptee ? COLORS.greenDark : '#C4611E',
+                        '& .MuiChip-icon': { color: adoptee ? COLORS.greenDark : '#C4611E' },
                       }}
                     />
                     <Typography sx={{ color: COLORS.muted, fontSize: '0.82rem', mt: 0.4 }}>
@@ -129,7 +129,7 @@ export default function YearArchive({ intro, annees = [], basePath = '#', varian
                   }}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', mb: 1 }}>
-                    <Box sx={{ width: 36, height: 36, borderRadius: 1.5, backgroundColor: accent ? `${accent.main}1A` : 'rgba(0,64,128,0.08)', color: accent ? accent.dark : COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 20 } }}>
+                    <Box sx={{ width: 36, height: 36, borderRadius: 1.5, backgroundColor: accent ? `${accent.main}1A` : 'rgba(12,116,73,0.08)', color: accent ? accent.dark : COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 20 } }}>
                       <DescriptionIcon />
                     </Box>
                     <Chip label={n} size="small" sx={{ height: 22, minWidth: 28, backgroundColor: vide ? COLORS.bg : (accent ? `${accent.main}2E` : 'rgba(224,169,46,0.18)'), color: vide ? COLORS.muted : (accent ? accent.dark : COLORS.goldDark), fontWeight: 800, fontSize: '0.72rem' }} />

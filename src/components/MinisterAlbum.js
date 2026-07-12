@@ -39,7 +39,7 @@ export default function MinisterAlbum({ photos }) {
           <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.6rem', md: '2rem' }, lineHeight: 1.1 }}>
             Album photo du Ministre
           </Typography>
-          <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
+          <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
         </Box>
         <Box sx={{ display: 'flex', gap: 1 }}>
           {[{ dir: -1, icon: <ArrowBackIosNewIcon fontSize="small" />, label: 'Précédent' }, { dir: 1, icon: <ArrowForwardIosIcon fontSize="small" />, label: 'Suivant' }].map((b) => (
@@ -81,7 +81,7 @@ export default function MinisterAlbum({ photos }) {
           {PHOTOS.map((p, i) => (
             <Box key={i} sx={{ width: `${100 / N}%`, height: '100%', position: 'relative' }}>
               <Box sx={{ position: 'absolute', inset: 0, backgroundImage: `url(${p.src})`, backgroundSize: 'cover', backgroundPosition: 'center top' }} />
-              <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(0,28,56,0.85) 0%, rgba(0,40,80,0.1) 45%, rgba(0,40,80,0) 100%)' }} />
+              <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(0,28,56,0.85) 0%, rgba(10,92,57,0.1) 45%, rgba(10,92,57,0) 100%)' }} />
               <Box sx={{ position: 'absolute', top: 12, left: 12, display: 'inline-flex', alignItems: 'center', gap: 0.6, backgroundColor: '#E0A92E', color: COLORS.blueDark, fontWeight: 800, fontSize: '0.62rem', letterSpacing: 0.5, textTransform: 'uppercase', px: 1, py: 0.4, borderRadius: 0.75 }}>
                 <PhotoLibraryIcon sx={{ fontSize: 13 }} /> Album
               </Box>

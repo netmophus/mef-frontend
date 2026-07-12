@@ -76,7 +76,7 @@ const SLIDES = [
 // =============================================================================
 
 const OVERLAY =
-  'linear-gradient(90deg, rgba(0,43,85,0.94) 0%, rgba(0,53,102,0.80) 42%, rgba(0,64,128,0.30) 100%), linear-gradient(0deg, rgba(0,30,60,0.55) 0%, rgba(0,30,60,0) 45%)';
+  'linear-gradient(90deg, rgba(7,58,38,0.94) 0%, rgba(10,80,52,0.80) 42%, rgba(12,116,73,0.30) 100%), linear-gradient(0deg, rgba(6,44,29,0.55) 0%, rgba(6,44,29,0) 45%)';
 
 // Empile : voile dégradé > image officielle (si présente) > image de secours.
 function buildBackground(slide) {

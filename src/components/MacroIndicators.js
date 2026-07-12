@@ -24,9 +24,9 @@ const ICON_MAP = {
 // ⚠️ Chiffres fournis à titre indicatif — servis par l'API /api/indicateurs/.
 const GRANDS = [
   { label: 'PIB Nominal', value: 23170, decimals: 0, suffix: '', unite: 'Milliards FCFA', icone: 'paid', couleurs: ['#0C7449', '#095C39'] },
-  { label: 'Croissance du PIB', value: 5, decimals: 0, suffix: '%', unite: 'Estimation', icone: 'trending_up', couleurs: ['#37a06a', '#1F6E42'] },
+  { label: 'Croissance du PIB', value: 5, decimals: 0, suffix: '%', unite: 'Estimation', icone: 'trending_up', couleurs: ['#37a06a', '#0A5C3A'] },
   { label: 'Inflation', value: 1.4, decimals: 1, suffix: '%', unite: 'Mars 2026', icone: 'show_chart', couleurs: ['#caa029', '#8a6314'] },
-  { label: 'Besoins de financement', value: 6075.2, decimals: 1, suffix: '', unite: 'Milliards FCFA', icone: 'request_quote', couleurs: ['#ef9038', '#B85E18'] },
+  { label: 'Besoins de financement', value: 6075.2, decimals: 1, suffix: '', unite: 'Milliards FCFA', icone: 'request_quote', couleurs: ['#ef9038', '#C4611E'] },
 ];
 
 const CLES = [
@@ -150,7 +150,7 @@ export default function MacroIndicators({ grands = GRANDS, cles = CLES, hideHead
             <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.7rem', md: '2.1rem' }, lineHeight: 1.1 }}>
               Indicateurs macroéconomiques
             </Typography>
-            <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
+            <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
           </Box>
         )}
 

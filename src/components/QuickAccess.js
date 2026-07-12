@@ -27,14 +27,14 @@ const ICONS = {
 // ⚠️ e-SECeF / SYGMEF restent en '#' (applications internes, pas d'URL publique).
 const OUTILS_FALLBACK = [
   { nom: 'e-SECeF', icone: 'computer', colors: ['#0a5ca8', '#002B55'], href: '#' },
-  { nom: 'Marchés publics', icone: 'gavel', colors: ['#37a06a', '#1F6E42'], href: 'https://www.marchespublics.ne/' },
+  { nom: 'Marchés publics', icone: 'gavel', colors: ['#37a06a', '#0A5C3A'], href: 'https://www.marchespublics.ne/' },
   { nom: 'Impôts (DGI)', icone: 'receipt_long', colors: ['#caa029', '#8a6a14'], href: 'https://www.impots.gouv.ne/' },
-  { nom: 'Douanes (DGD)', icone: 'public', colors: ['#ef9038', '#B85E18'], href: 'http://www.douanes.gouv.ne/' },
+  { nom: 'Douanes (DGD)', icone: 'public', colors: ['#ef9038', '#C4611E'], href: 'http://www.douanes.gouv.ne/' },
   { nom: 'Trésor (DGTCP)', icone: 'account_balance', colors: ['#0a5ca8', '#002B55'], href: 'https://tresor.ne/' },
   { nom: 'SYGMEF', icone: 'description', colors: ['#2f8f7a', '#1f6e5e'], href: '#' },
   { nom: 'Cour des comptes', icone: 'gavel', colors: ['#4b6cb7', '#2a3f7a'], href: 'https://www.courdescomptes.ne/' },
   { nom: 'MDE', icone: 'payments', colors: ['#b98a2e', '#7a5a14'], href: 'https://mde.ne/' },
-  { nom: 'Finance inclusive (SNFI)', icone: 'payments', colors: ['#37a06a', '#1F6E42'], href: 'http://www.se-snfi.ne/' },
+  { nom: 'Finance inclusive (SNFI)', icone: 'payments', colors: ['#37a06a', '#0A5C3A'], href: 'http://www.se-snfi.ne/' },
 ];
 // =============================================================================
 
@@ -50,7 +50,7 @@ export default function QuickAccess({ liens }) {
         <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.7rem', md: '2.1rem' }, lineHeight: 1.1 }}>
           Accès rapides
         </Typography>
-        <Box sx={{ display: 'block', width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1, mb: 2 }} />
+        <Box sx={{ display: 'block', width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1, mb: 2 }} />
         <Box
           sx={{
             display: 'grid',

@@ -47,7 +47,7 @@ export default function MinistersGallery({ personnes = [] }) {
                     transition: 'transform 0.5s ease',
                   }}
                 />
-                <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)' }} />
+                <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)' }} />
               </Box>
               <Box sx={{ p: 2 }}>
                 <Typography sx={{ fontWeight: 800, color: COLORS.blue, fontSize: '0.98rem', lineHeight: 1.25 }}>

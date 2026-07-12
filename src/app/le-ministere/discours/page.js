@@ -7,7 +7,7 @@ import { getDiscours } from '@/lib/api';
 // ⚠️ Composant serveur : couleurs LITTÉRALES (le CSS construit à partir des
 // constantes du thème — surtout l'or — peut être supprimé du rendu serveur).
 const C = {
-  blue: '#004080',
+  blue: '#0C7449',
   bg: '#EEF1F5',
   border: '#DCE3EC',
   gold: '#E0A92E',

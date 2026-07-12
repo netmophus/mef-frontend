@@ -55,7 +55,7 @@ export default function ActusSlider({ actus }) {
             <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.7rem', md: '2.1rem' }, lineHeight: 1.1 }}>
               Dernières actualités
             </Typography>
-            <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
+            <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
           </Box>
           <Box sx={{ display: 'flex', gap: 1 }}>
             {[{ ref: prevRef, icon: <ArrowBackIosNewIcon fontSize="small" />, label: 'Précédent' }, { ref: nextRef, icon: <ArrowForwardIosIcon fontSize="small" />, label: 'Suivant' }].map((b, i) => (

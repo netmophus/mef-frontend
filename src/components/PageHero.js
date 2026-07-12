@@ -48,7 +48,7 @@ export default function PageHero({ surtitre, titre, sousTitre, fil = [] }) {
             {sousTitre}
           </Typography>
         )}
-        <Box sx={{ width: 80, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 2 }} />
+        <Box sx={{ width: 80, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 2 }} />
       </Container>
     </Box>
   );

@@ -23,7 +23,7 @@ function DatePastille({ date, grand }) {
         flexShrink: 0,
         textAlign: 'center',
         borderRadius: 1.5,
-        backgroundColor: grand ? 'rgba(255,255,255,0.16)' : 'rgba(0,64,128,0.06)',
+        backgroundColor: grand ? 'rgba(255,255,255,0.16)' : 'rgba(12,116,73,0.06)',
         py: grand ? 1 : 0.75,
       }}
     >
@@ -47,13 +47,13 @@ export default function NewsDuo() {
         <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.6rem', md: '2rem' }, lineHeight: 1.1 }}>
           Salle de presse
         </Typography>
-        <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
+        <Box sx={{ width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
       </Box>
 
       <Box sx={{ backgroundColor: '#fff', border: `1px solid ${COLORS.border}`, borderRadius: 3, overflow: 'hidden', boxShadow: '0 6px 18px rgba(0,0,0,0.06)' }}>
         {/* En-tête de carte */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1.5, borderBottom: `1px solid ${COLORS.border}` }}>
-          <Box sx={{ width: 32, height: 32, borderRadius: 1.5, backgroundColor: 'rgba(0,64,128,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 19 } }}>
+          <Box sx={{ width: 32, height: 32, borderRadius: 1.5, backgroundColor: 'rgba(12,116,73,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 19 } }}>
             <CampaignIcon />
           </Box>
           <Typography component="h3" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: '1.05rem', flex: 1 }}>Communiqués</Typography>

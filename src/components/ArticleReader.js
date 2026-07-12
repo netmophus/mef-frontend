@@ -22,7 +22,7 @@ function embedVideo(url) {
   return url;
 }
 
-const OMBRE = '0 12px 28px rgba(0,40,80,0.14)';
+const OMBRE = '0 12px 28px rgba(10,92,57,0.14)';
 
 function Media({ video, image, titre }) {
   if (video) {
@@ -131,7 +131,7 @@ export default function ArticleReader({ article, onClose }) {
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <Button onClick={onClose} variant="contained" startIcon={<CloseIcon />}
                 sx={{ backgroundColor: COLORS.blue, fontWeight: 700, borderRadius: '999px', px: 4, py: 1,
-                  boxShadow: '0 8px 20px rgba(0,64,128,0.25)', '&:hover': { backgroundColor: COLORS.blueDark } }}>
+                  boxShadow: '0 8px 20px rgba(12,116,73,0.25)', '&:hover': { backgroundColor: COLORS.blueDark } }}>
                 Fermer l'article
               </Button>
             </Box>

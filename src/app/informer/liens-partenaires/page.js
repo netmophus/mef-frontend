@@ -3,9 +3,9 @@ import PageHero from '@/components/PageHero';
 import ResourcesPartners from '@/components/ResourcesPartners';
 import { getLiensPartenaires } from '@/lib/api';
 
-const C = { blue: '#004080', ink: '#37474F', bg: '#EEF1F5' };
+const C = { blue: '#0C7449', ink: '#37474F', bg: '#EEF1F5' };
 const GOLD = '#E0A92E';
-const TRICOLOR = 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)';
+const TRICOLOR = 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)';
 
 export const metadata = {
   title: 'Liens & Partenaires — Ministère des Finances du Niger',

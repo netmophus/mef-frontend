@@ -21,7 +21,7 @@ const BLOCS = [
   {
     titre: 'Directions & Services',
     Icon: AccountTreeIcon,
-    colors: ['#37a06a', '#1F6E42'],
+    colors: ['#37a06a', '#0A5C3A'],
     liens: [
       { label: 'Administration Centrale', href: '/directions/administration-centrale' },
       { label: 'Les services techniques déconcentrés', href: '/directions/services-deconcentres' },
@@ -124,7 +124,7 @@ export default function BudgetDirections() {
           <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: { xs: '1.7rem', md: '2.1rem' }, lineHeight: 1.1 }}>
             {'Budget & Organisation'}
           </Typography>
-          <Box sx={{ display: 'block', width: 72, height: 4, background: 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
+          <Box sx={{ display: 'block', width: 72, height: 4, background: 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)', borderRadius: 2, mt: 1.5 }} />
         </Box>
 
         <Box

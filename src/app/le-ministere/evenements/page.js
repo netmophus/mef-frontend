@@ -9,11 +9,11 @@ import { getEvenements } from '@/lib/api';
 // ⚠️ Composant serveur : couleurs LITTÉRALES (le CSS construit à partir des
 // constantes du thème peut être supprimé du rendu serveur).
 const C = {
-  blue: '#004080',
+  blue: '#0C7449',
   blueDark: '#002B55',
-  green: '#2E8B57',
-  greenDark: '#1F6E42',
-  orange: '#E07B2C',
+  green: '#00B16C',
+  greenDark: '#0A5C3A',
+  orange: '#FB9344',
   ink: '#37474F',
   muted: '#90A4AE',
   bg: '#EEF1F5',
@@ -21,7 +21,7 @@ const C = {
 };
 const GOLD = '#E0A92E';
 const GOLD_DARK = '#B5841F';
-const TRICOLOR = 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)';
+const TRICOLOR = 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)';
 
 export const metadata = {
   title: 'Événements — Ministère des Finances du Niger',

@@ -11,9 +11,9 @@ export const metadata = {
 
 const PARTENAIRES = [
   { nom: 'Fonds Monétaire International', sigle: 'FMI', init: 'FMI', couleur: '#0a5ca8', href: 'https://www.imf.org' },
-  { nom: 'Banque Mondiale', sigle: 'BM', init: 'BM', couleur: '#2E8B57', href: 'https://www.banquemondiale.org' },
+  { nom: 'Banque Mondiale', sigle: 'BM', init: 'BM', couleur: '#00B16C', href: 'https://www.banquemondiale.org' },
   { nom: 'Agence Française de Développement', sigle: 'AFD', init: 'AFD', couleur: '#caa029', href: 'https://www.afd.fr' },
-  { nom: 'Banque Africaine de Développement', sigle: 'BAD', init: 'BAD', couleur: '#E07B2C', href: 'https://www.afdb.org' },
+  { nom: 'Banque Africaine de Développement', sigle: 'BAD', init: 'BAD', couleur: '#FB9344', href: 'https://www.afdb.org' },
   { nom: 'Banque Ouest Africaine de Développement', sigle: 'BOAD', init: 'BOAD', couleur: '#8E5FA8', href: 'https://www.boad.org' },
   { nom: "Délégation de l'Union Européenne", sigle: 'UE', init: 'UE', couleur: '#1f6fb2', href: 'https://www.eeas.europa.eu' },
 ];
@@ -37,7 +37,7 @@ export default function Page() {
           {/* Intro */}
           <Box sx={{ backgroundColor: '#fff', border: `1px solid ${COLORS.border}`, borderRadius: 3, boxShadow: '0 8px 24px rgba(0,0,0,0.06)', p: { xs: 2.5, md: 3 }, mb: { xs: 3, md: 3.5 } }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 1.5 }}>
-              <Box sx={{ width: 36, height: 36, borderRadius: 1.5, backgroundColor: 'rgba(0,64,128,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 21 } }}>
+              <Box sx={{ width: 36, height: 36, borderRadius: 1.5, backgroundColor: 'rgba(12,116,73,0.08)', color: COLORS.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 21 } }}>
                 <HandshakeIcon />
               </Box>
               <Typography component="h2" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: '1.15rem' }}>Coopération</Typography>

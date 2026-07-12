@@ -16,9 +16,9 @@ import { getBiographie } from '@/lib/api';
 // ⚠️ Composant serveur : couleurs LITTÉRALES (le CSS construit à partir des
 // constantes du thème — surtout l'or — peut être supprimé du rendu serveur).
 const C = {
-  blue: '#004080',
+  blue: '#0C7449',
   blueDark: '#002B55',
-  blueHover: '#003366',
+  blueHover: '#0A5C3A',
   goldDark: '#B5841F',
   ink: '#37474F',
   muted: '#90A4AE',
@@ -93,7 +93,7 @@ function Card({ children, sx }) {
 function BlocTitre({ Icon, children }) {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 2 }}>
-      <Box sx={{ width: 36, height: 36, borderRadius: 1.5, backgroundColor: 'rgba(0,64,128,0.08)', color: C.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 21 } }}>
+      <Box sx={{ width: 36, height: 36, borderRadius: 1.5, backgroundColor: 'rgba(12,116,73,0.08)', color: C.blue, display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { fontSize: 21 } }}>
         <Icon />
       </Box>
       <Typography component="h2" sx={{ fontWeight: 800, color: C.blue, fontSize: '1.2rem' }}>{children}</Typography>

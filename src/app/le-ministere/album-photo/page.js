@@ -10,13 +10,13 @@ import { getMinistre, getAlbumMinistre } from '@/lib/api';
 // ⚠️ Composant serveur : on utilise des couleurs LITTÉRALES (le CSS construit
 // à partir des constantes du thème peut être supprimé du rendu serveur).
 const C = {
-  blue: '#004080',
+  blue: '#0C7449',
   blueDark: '#002B55',
   bg: '#EEF1F5',
   ink: '#37474F',
 };
 const GOLD = '#E0A92E';
-const TRICOLOR = 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)';
+const TRICOLOR = 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)';
 
 export const metadata = {
   title: 'Album photo du Ministre — Ministère des Finances du Niger',

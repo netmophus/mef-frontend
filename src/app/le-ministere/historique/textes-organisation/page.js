@@ -61,12 +61,12 @@ export default async function Page() {
                 py: 1,
                 borderRadius: 2,
                 textDecoration: 'none',
-                backgroundColor: 'rgba(0,64,128,0.06)',
+                backgroundColor: 'rgba(12,116,73,0.06)',
                 color: COLORS.blue,
                 fontWeight: 700,
                 fontSize: '0.88rem',
                 transition: 'background-color 0.2s ease',
-                '&:hover': { backgroundColor: 'rgba(0,64,128,0.12)' },
+                '&:hover': { backgroundColor: 'rgba(12,116,73,0.12)' },
               }}
             >
               <InfoOutlinedIcon sx={{ fontSize: 18 }} />

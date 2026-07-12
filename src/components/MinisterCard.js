@@ -12,18 +12,18 @@ import { COLORS } from '@/theme';
 // peut être supprimé du rendu serveur).
 const GOLD = '#E0A92E';
 const GOLD_DARK = '#B5841F';
-const TRICOLOR = 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)';
+const TRICOLOR = 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)';
 
 // Correspondance clé (API) → icône + accent + sous-titre par défaut.
 const LINK_META = {
-  menu_book: { Icon: MenuBookIcon, accent: '#004080', desc: 'Parcours & biographie' },
-  groups: { Icon: GroupsIcon, accent: '#2E8B57', desc: 'Membres du cabinet' },
+  menu_book: { Icon: MenuBookIcon, accent: '#0C7449', desc: 'Parcours & biographie' },
+  groups: { Icon: GroupsIcon, accent: '#00B16C', desc: 'Membres du cabinet' },
   record_voice_over: { Icon: RecordVoiceOverIcon, accent: GOLD_DARK, desc: 'Allocutions & interventions' },
-  description: { Icon: DescriptionIcon, accent: '#E07B2C', desc: 'Documents officiels' },
-  link: { Icon: LinkIcon, accent: '#004080', desc: 'En savoir plus' },
+  description: { Icon: DescriptionIcon, accent: '#FB9344', desc: 'Documents officiels' },
+  link: { Icon: LinkIcon, accent: '#0C7449', desc: 'En savoir plus' },
 };
 // Accents de repli (si l'icône n'est pas connue), dans l'ordre des liens.
-const ACCENT_CYCLE = ['#004080', '#2E8B57', GOLD_DARK, '#E07B2C'];
+const ACCENT_CYCLE = ['#0C7449', '#00B16C', GOLD_DARK, '#FB9344'];
 
 // === LE MINISTRE — repli local (si l'API est indisponible) ===================
 const MINISTRE_FALLBACK = {
@@ -53,7 +53,7 @@ export default function MinisterCard({ ministre }) {
         borderRadius: 3,
         border: `1px solid ${COLORS.border}`,
         backgroundColor: '#fff',
-        boxShadow: '0 14px 34px rgba(0,40,80,0.10)',
+        boxShadow: '0 14px 34px rgba(10,92,57,0.10)',
         overflow: 'hidden',
         height: '100%',
         width: '100%',
@@ -75,7 +75,7 @@ export default function MinisterCard({ ministre }) {
             backgroundColor: COLORS.blueDark,
           }}
         />
-        <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(0,28,56,0.95) 0%, rgba(0,40,80,0.30) 52%, rgba(0,40,80,0) 100%)' }} />
+        <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(0,28,56,0.95) 0%, rgba(10,92,57,0.30) 52%, rgba(10,92,57,0) 100%)' }} />
         {/* Étiquette */}
         <Box sx={{ position: 'absolute', top: 14, left: 14, display: 'inline-flex', alignItems: 'center', gap: 0.6, backgroundColor: GOLD, color: '#002B55', fontWeight: 800, fontSize: '0.62rem', letterSpacing: 0.6, textTransform: 'uppercase', px: 1.1, py: 0.45, borderRadius: 0.75, boxShadow: '0 4px 12px rgba(0,0,0,0.25)' }}>
           <Box sx={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#002B55' }} />

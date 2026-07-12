@@ -6,11 +6,11 @@ import { TRICOLOR } from '@/theme';
 // ⚠️ Composant serveur : couleurs LITTÉRALES (le CSS construit à partir des
 // constantes du thème peut être supprimé du rendu serveur).
 const C = {
-  blue: '#004080',
+  blue: '#0C7449',
   blueDark: '#002B55',
-  green: '#2E8B57',
-  greenDark: '#1F6E42',
-  orange: '#E07B2C',
+  green: '#00B16C',
+  greenDark: '#0A5C3A',
+  orange: '#FB9344',
   ink: '#37474F',
   muted: '#90A4AE',
   bg: '#EEF1F5',

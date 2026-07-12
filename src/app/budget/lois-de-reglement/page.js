@@ -35,7 +35,7 @@ export default async function Page() {
         intro="Les différentes lois de règlement adoptées sont classées en fonction des années budgétaires auxquelles elles se rapportent. Cette collection commence à partir de 1997. Certaines lois de règlement ne sont pas encore adoptées ou sont en cours d'élaboration."
         annees={annees}
         basePath="/budget/lois-de-reglement"
-        accent={{ main: '#2E8B57', dark: '#1F6E42' }}
+        accent={{ main: '#00B16C', dark: '#0A5C3A' }}
       />
     </>
   );

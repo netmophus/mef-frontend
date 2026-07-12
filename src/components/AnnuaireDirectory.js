@@ -104,7 +104,7 @@ export default function AnnuaireDirectory() {
                 '&:hover': { transform: 'translateY(-3px)', boxShadow: '0 14px 28px rgba(0,0,0,0.10)' },
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, px: 2, py: 1.5, borderBottom: `1px solid ${COLORS.border}`, backgroundColor: 'rgba(0,64,128,0.04)' }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, px: 2, py: 1.5, borderBottom: `1px solid ${COLORS.border}`, backgroundColor: 'rgba(12,116,73,0.04)' }}>
                 <ApartmentIcon sx={{ fontSize: 20, color: COLORS.blue, mt: '2px', flexShrink: 0 }} />
                 <Typography component="h3" sx={{ fontWeight: 800, color: COLORS.blue, fontSize: '0.92rem', lineHeight: 1.3 }}>
                   {s.nom}

@@ -6,7 +6,7 @@ import MainMenu from './MainMenu';
 import { getHeader } from '@/lib/api';
 
 // Bandeau tricolore (drapeau du Niger) en tête de site
-const TRICOLORE = 'linear-gradient(90deg, #E07B2C 0 33.33%, #ffffff 33.33% 66.66%, #2E8B57 66.66% 100%)';
+const TRICOLORE = 'linear-gradient(90deg, #FB9344 0 33.33%, #ffffff 33.33% 66.66%, #00B16C 66.66% 100%)';
 
 export default async function Header() {
   const { site, contact, menu } = await getHeader();
