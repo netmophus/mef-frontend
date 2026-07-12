@@ -84,28 +84,36 @@ export default function MainMenu({ menu = menuItems, site = {} }) {
         >
           <Box
             sx={{
-              width: { xs: 64, md: 96 },
-              height: { xs: 64, md: 96 },
-              borderRadius: 3,
+              // Emblème volontairement plus grand que la barre : il DÉBORDE vers le bas.
+              width: { xs: 92, md: 132 },
+              height: { xs: 92, md: 132 },
+              // Ancré en haut de la barre puis débordant en bas ; la marge basse
+              // négative annule le surplus de hauteur -> le rectangle bleu ne grandit pas.
+              alignSelf: 'flex-start',
+              mt: { xs: '4px', md: '8px' },
+              mb: { xs: '-20px', md: '-44px' },
+              borderRadius: 0,
               backgroundColor: '#fff',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 8px 22px rgba(0,0,0,0.30)',
+              boxShadow: '0 10px 26px rgba(0,0,0,0.32)',
               border: `3px solid ${COLORS.gold}`,
               flexShrink: 0,
+              position: 'relative',
+              zIndex: 1,
               transition: 'transform 0.25s ease, box-shadow 0.25s ease',
               '&:hover': {
                 transform: 'translateY(-2px) scale(1.03)',
-                boxShadow: '0 12px 28px rgba(0,0,0,0.38)',
+                boxShadow: '0 14px 32px rgba(0,0,0,0.40)',
               },
             }}
           >
             <Image
               src={logo}
               alt={`Armoiries — ${nomSite}`}
-              width={88}
-              height={88}
+              width={128}
+              height={128}
               style={{ objectFit: 'contain', width: '86%', height: '86%' }}
             />
           </Box>
@@ -122,17 +130,22 @@ export default function MainMenu({ menu = menuItems, site = {} }) {
         <Box sx={{ flex: 1 }} />
 
         {/* Navigation bureau */}
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5 }}>
+        <Box sx={{ display: { xs: 'none', lg: 'flex' }, alignItems: 'center', gap: { lg: 0.25, xl: 0.5 } }}>
           {menu.map((item) => {
             const active = isActive(item);
             const navSx = {
               color: '#fff',
-              px: 1.5,
+              px: { lg: 1.1, xl: 1.5 },
+              minWidth: 'auto',
               fontWeight: 600,
+              fontSize: { lg: '0.9rem', xl: '0.95rem' },
+              lineHeight: 1.2,
+              whiteSpace: 'nowrap',
               borderRadius: 0,
               borderBottom: '3px solid',
               borderColor: active ? COLORS.gold : 'transparent',
               transition: 'all 0.2s ease',
+              '& .MuiButton-endIcon': { ml: 0.25 },
               '&:hover': { backgroundColor: 'transparent', borderColor: COLORS.gold },
             };
             return item.submenu ? (
@@ -198,7 +211,7 @@ export default function MainMenu({ menu = menuItems, site = {} }) {
         <IconButton
           onClick={() => setDrawerOpen(true)}
           aria-label="Ouvrir le menu"
-          sx={{ color: '#fff', display: { xs: 'inline-flex', md: 'none' } }}
+          sx={{ color: '#fff', display: { xs: 'inline-flex', lg: 'none' } }}
         >
           <MenuIcon />
         </IconButton>
@@ -206,7 +219,7 @@ export default function MainMenu({ menu = menuItems, site = {} }) {
 
       {/* Menu mobile */}
       <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <Box sx={{ width: 290 }}>
+        <Box sx={{ width: { xs: 'min(290px, 85vw)', sm: 290 } }}>
           <Box
             sx={{
               display: 'flex',

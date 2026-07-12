@@ -10,7 +10,7 @@ export default function PageHero({ surtitre, titre, sousTitre, fil = [] }) {
       sx={{
         position: 'relative',
         color: '#fff',
-        background: 'linear-gradient(120deg, #002B55 0%, #004080 70%, #00366b 100%)',
+        background: 'linear-gradient(120deg, #0A5C3A 0%, #0C7449 65%, #084C30 100%)',
         px: { xs: 2, md: 3 },
         pt: { xs: 4, md: 6 },
         pb: { xs: 4, md: 6 },

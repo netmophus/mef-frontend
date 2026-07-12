@@ -23,7 +23,7 @@ const ICON_MAP = {
 // === INDICATEURS (données de démo, repli) ====================================
 // ⚠️ Chiffres fournis à titre indicatif — servis par l'API /api/indicateurs/.
 const GRANDS = [
-  { label: 'PIB Nominal', value: 23170, decimals: 0, suffix: '', unite: 'Milliards FCFA', icone: 'paid', couleurs: ['#0a5ca8', '#002B55'] },
+  { label: 'PIB Nominal', value: 23170, decimals: 0, suffix: '', unite: 'Milliards FCFA', icone: 'paid', couleurs: ['#0C7449', '#095C39'] },
   { label: 'Croissance du PIB', value: 5, decimals: 0, suffix: '%', unite: 'Estimation', icone: 'trending_up', couleurs: ['#37a06a', '#1F6E42'] },
   { label: 'Inflation', value: 1.4, decimals: 1, suffix: '%', unite: 'Mars 2026', icone: 'show_chart', couleurs: ['#caa029', '#8a6314'] },
   { label: 'Besoins de financement', value: 6075.2, decimals: 1, suffix: '', unite: 'Milliards FCFA', icone: 'request_quote', couleurs: ['#ef9038', '#B85E18'] },
@@ -158,7 +158,7 @@ export default function MacroIndicators({ grands = GRANDS, cles = CLES, hideHead
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', md: 'repeat(4, 1fr)' }, gap: { xs: 2, md: 2.5 } }}>
           {grands.map(({ label, value, decimals, suffix, unite, icone, couleurs }) => {
             const Icon = ICON_MAP[icone] || PaidIcon;
-            const c = couleurs || ['#0a5ca8', '#002B55'];
+            const c = couleurs || ['#0C7449', '#095C39'];
             return (
             <Box
               key={label}

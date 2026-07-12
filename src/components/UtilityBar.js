@@ -173,15 +173,13 @@ export default function UtilityBar({ contact = INFOS_MINISTERE }) {
           paper: {
             sx: {
               width: { xs: '100%', sm: 460 },
-              borderTopLeftRadius: { sm: 16 },
-              borderBottomLeftRadius: { sm: 16 },
             },
           },
         }}
       >
         <Box
           sx={{
-            background: `linear-gradient(135deg, ${COLORS.blue} 0%, #0a5ca8 100%)`,
+            background: `linear-gradient(135deg, ${COLORS.blue} 0%, #12945F 100%)`,
             color: '#fff',
             px: 3,
             py: 3,

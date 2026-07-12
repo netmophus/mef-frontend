@@ -6,19 +6,24 @@ import { createTheme } from '@mui/material/styles';
 // Bleu d'État commun + accent OR (identité « Finances / Trésor »).
 // Charte graphique inspirée des armoiries de la République du Niger :
 // vert de l'écu, or du soleil, orange des fanions (drapeau), sur base bleu d'État.
+// Charte des armoiries de la République du Niger : le VERT de l'écu devient la
+// couleur institutionnelle de base (l'emblème ne comporte aucun bleu).
+// Les clés gardent leurs noms (blue/…) pour ne rien casser dans le code existant ;
+// seules les VALEURS changent. `blueDark` et `gold` sont conservés tels quels pour
+// laisser le bandeau sombre du haut + le ticker « À LA UNE » strictement inchangés.
 export const COLORS = {
-  blue: '#004080', // Bleu institutionnel (base d'État)
-  blueDark: '#002B55', // Bleu nuit (bandeau d'annonces)
-  blueHover: '#003366',
-  green: '#2E8B57', // Vert de l'écu des armoiries
-  greenDark: '#1F6E42',
-  gold: '#E0A92E', // Or du soleil des armoiries
+  blue: '#0C7449', // Vert profond de l'écu — couleur de base (ex-bleu d'État)
+  blueDark: '#002B55', // CONSERVÉ : bandeau sombre du haut + éléments « noirs »
+  blueHover: '#0A5C3A', // Survol de la couleur de base
+  green: '#00B16C', // Vert vif de l'intérieur de l'écu (accents, tricolore)
+  greenDark: '#0A5C3A', // Vert foncé (texte / survols)
+  gold: '#E0A92E', // CONSERVÉ : or du soleil des armoiries
   goldDark: '#B5841F',
-  orange: '#E07B2C', // Orange des fanions / du drapeau
+  orange: '#FB9344', // Orange des hampes / drapeaux des armoiries
   ink: '#37474F', // Texte principal
   muted: '#90A4AE', // Texte secondaire
   bg: '#EEF1F5', // Fond neutre clair des sections
-  card: '#FFFFFF', // Cartes internes en blanc (ressortent sur les cadres colorés)
+  card: '#FFFFFF', // Cartes internes en blanc
   border: '#DCE3EC',
 };
 
@@ -38,7 +43,10 @@ const theme = createTheme({
     fontFamily: 'var(--font-roboto), Roboto, Arial, sans-serif',
     button: { textTransform: 'none', fontWeight: 600 },
   },
-  shape: { borderRadius: 10 },
+  // Coins carrés sur tout le site : en sx, `borderRadius: n` vaut `n * shape.borderRadius`.
+  // À 0, toutes les cartes/photos/cadres deviennent carrés. Les cercles ('50%') et les
+  // boutons pilule (999px littéral) ne sont pas concernés.
+  shape: { borderRadius: 0 },
   components: {
     MuiButton: {
       styleOverrides: {

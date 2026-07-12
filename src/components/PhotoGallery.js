@@ -78,7 +78,7 @@ export default function PhotoGallery({ photos = [] }) {
                   font: 'inherit',
                   px: 2,
                   py: 0.8,
-                  borderRadius: 999,
+                  borderRadius: '999px',
                   border: `1px solid ${actif ? COLORS.blue : COLORS.border}`,
                   backgroundColor: actif ? COLORS.blue : '#fff',
                   color: actif ? '#fff' : COLORS.ink,

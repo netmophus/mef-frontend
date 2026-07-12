@@ -75,7 +75,7 @@ export default function Footer() {
       component="footer"
       sx={{
         color: '#fff',
-        background: 'linear-gradient(135deg, #002B55 0%, #003a73 60%, #00264d 100%)',
+        background: 'linear-gradient(135deg, #0A5C3A 0%, #0C7449 55%, #063D26 100%)',
       }}
     >
       <Container maxWidth="lg" sx={{ py: { xs: 5, md: 7 } }}>

@@ -130,7 +130,7 @@ export default function ArticleReader({ article, onClose }) {
             <Divider sx={{ my: 3 }} />
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <Button onClick={onClose} variant="contained" startIcon={<CloseIcon />}
-                sx={{ backgroundColor: COLORS.blue, fontWeight: 700, borderRadius: 999, px: 4, py: 1,
+                sx={{ backgroundColor: COLORS.blue, fontWeight: 700, borderRadius: '999px', px: 4, py: 1,
                   boxShadow: '0 8px 20px rgba(0,64,128,0.25)', '&:hover': { backgroundColor: COLORS.blueDark } }}>
                 Fermer l'article
               </Button>

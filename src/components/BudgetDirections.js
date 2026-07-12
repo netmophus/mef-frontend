@@ -9,7 +9,7 @@ const BLOCS = [
   {
     titre: 'Budget',
     Icon: AccountBalanceWalletIcon,
-    colors: ['#0a5ca8', '#002B55'],
+    colors: ['#0C7449', '#095C39'],
     liens: [
       { label: 'Lois de finances', href: '/budget/lois-de-finances' },
       { label: 'Lois de règlement', href: '/budget/lois-de-reglement' },
